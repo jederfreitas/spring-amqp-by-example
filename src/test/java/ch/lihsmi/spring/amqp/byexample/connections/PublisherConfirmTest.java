@@ -48,8 +48,8 @@ public class PublisherConfirmTest {
 
     @After
     public void resetBroker() throws InterruptedException {
-        admin.deleteQueue("validListener");
-        admin.deleteExchange(DIRECT_EXCHANGE);
+    	admin.deleteQueue("validListener");
+    	admin.deleteExchange(DIRECT_EXCHANGE);
     }
 
     @Test
@@ -74,7 +74,7 @@ public class PublisherConfirmTest {
 
         @Bean
         public ConnectionFactory connectionFactory() {
-            CachingConnectionFactory connectionFactory = new CachingConnectionFactory("localhost");
+            CachingConnectionFactory connectionFactory = new CachingConnectionFactory("ec2-18-231-171-118.sa-east-1.compute.amazonaws.com");
             connectionFactory.setPublisherConfirms(true);
             return connectionFactory;
         }
